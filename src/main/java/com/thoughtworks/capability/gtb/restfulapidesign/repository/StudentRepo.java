@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class StudentRepo {
 
-    private final Map<Integer, Student> studentList = new HashMap<>();
+    private final static Map<Integer, Student> studentList = new HashMap<>();
 
     public List<Student> getStudentList() {
         return new ArrayList<>(studentList.values());

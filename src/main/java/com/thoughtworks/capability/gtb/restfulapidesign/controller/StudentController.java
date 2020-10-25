@@ -29,7 +29,7 @@ public class StudentController {
     @GetMapping
     public List<Student> getAllStudentsOrByGender(@RequestParam(required = false) String gender) {
 
-        return studentService.getStudentList(gender);
+        return studentService.getAllStudentsOrByGender(gender);
     }
 
     @GetMapping("/{id}")

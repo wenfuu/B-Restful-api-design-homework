@@ -4,14 +4,12 @@ import com.thoughtworks.capability.gtb.restfulapidesign.model.Student;
 import com.thoughtworks.capability.gtb.restfulapidesign.repository.StudentRepo;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class StudentService {
 
     private final StudentRepo studentRepo = new StudentRepo();
-    private final List<Student> studentList = new ArrayList<>();
 
     public void addStudent(Student student) {
         studentRepo.addStudent(student);
@@ -21,7 +19,11 @@ public class StudentService {
         studentRepo.deleteStudent(id);
     }
 
-    public List<Student> getStudentList(String gender) {
+    public List<Student> getAllStudents() {
+        return studentRepo.getStudentList();
+    }
+
+    public List<Student> getAllStudentsOrByGender(String gender) {
         if (gender == null) {
             return studentRepo.getStudentList();
         } else {
